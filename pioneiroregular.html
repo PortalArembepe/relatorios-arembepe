@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloco-principal">
+        <form action="https://script.google.com/macros/s/AKfycbwHnwXkWWK36owmhSy_7tQHCPbDbrntKaBqmoK6mucqjI0zXSSIF6FTOVM36kpkkchbQA/exec" 
+            method="post" 
+            onsubmit="return validarFormulario()">
+            
+            <label>Nome e Sobrenome:</label>
+            <input type="text" name="Nome" id="nome">
+            
+            <label>Quantidade de horas:</label>
+            <input type="number" name="Horas">
+            
+            <label>Estudos:</label>
+            <input type="number" name="Estudos">
+            
+            <label for="observacao">Observação:</label>
+            <textarea id="observacao" name="Comentario" rows="4" cols="50" placeholder="Digite sua observação"></textarea>
+
+            <input type="submit" value="Enviar">
+            <a href="index.html">Voltar</a>
+        </form>
+    </div>
+
+    <script>
+        function validarFormulario() {
+            var nome = document.getElementById('nome').value;
+
+            if (nome.trim() === '') {
+                alert("Por favor, preencha o campo Nome e Sobrenome.");
+                return false; // Impede o envio do formulário se o campo estiver vazio
+            }
+            return true; // Permite o envio do formulário se o campo estiver preenchido
+        }
+    </script>
+</body>
+</html>
